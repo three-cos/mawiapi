@@ -1,0 +1,33 @@
+{
+    "name": "wardenyarn/mawiapi",
+    "description": "API for Mawisoft Salesmax CRM",
+    "keywords": [
+        "wardenyarn",
+        "mawisoft",
+        "salesmax"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Wardenyarn\\MawiApi\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Warden Yarn",
+            "email": "three.cos@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "mtownsend/xml-to-array": "^2.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    }
+}
