@@ -14,7 +14,7 @@
 - [Лицензия](#Лицензия)
 
 ## Подготовка
-Актуальный документ с описанием параметров вызова API можно получить отправив запрос в техподдержку Mawisoft [info@mawisoft.com](info@mawisoft.com). Эта бибилиотека была создана опираясь на [данный документ](https://github.com/three-cos/mawiapi/blob/master/src/Docs/API%20CRM%20SalesMax%206.8.docx).
+Актуальный документ с описанием параметров вызова API можно получить отправив запрос в техподдержку Mawisoft [info@mawisoft.com](mailto:info@mawisoft.com). Эта бибилиотека была создана опираясь на [данный документ](https://github.com/three-cos/mawiapi/blob/master/src/Docs/API%20CRM%20SalesMax%206.8.docx).
 
 ## Установка
 ```bash
