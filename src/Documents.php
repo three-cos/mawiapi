@@ -2,7 +2,6 @@
 
 namespace Wardenyarn\MawiApi;
 
-use Wardenyarn\MawiApi\Entities\MawiEntity;
 use Wardenyarn\MawiApi\Exceptions\MawiApiException;
 
 trait Documents

@@ -248,7 +248,7 @@ use Wardenyarn\MawiApi\Entities\Event;
 $event_id = $api->setEvent(Event::TYPE_EMAIL, $clientId, $userId, $params);
 
 // Отчет по событию
-$report_id = $api->setReport($event_id, $message, $success = 'on');
+$report_id = $api->setReport($event_id, $message, bool $success);
 
 // Получение $api->limit записей с возможностью фильтрации
 $filter = ['date' => date('Ymd')];

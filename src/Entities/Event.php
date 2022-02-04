@@ -10,7 +10,7 @@ class Event extends MawiEntity
     const TYPE_EMAIL   = 1003;
     const TYPE_CALL    = 1004;
 
-    public function setReport($message, $success = 'on')
+    public function setReport($message, bool $success = true)
     {
         self::$api->setReport($this->id, $message, $success);
     }

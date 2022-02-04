@@ -19,13 +19,14 @@ trait Events
         return $this->apiCall('/integration/set/event', $params);
     }
 
-    public function setReport(int $eventId, $message, $success = 'on')
+    public function setReport(int $eventId, $message, bool $success = true)
     {
+        $success_value = $success ? 'on' : 'off';
+
         return $this->apiCall('/integration/set/report', [
             'report.id' => $eventId,
             'report.message' => $message,
-            'report.success' => $success,
+            'report.success' => $success_value,
         ]);
     }
-
 }

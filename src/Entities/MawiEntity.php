@@ -32,9 +32,7 @@ class MawiEntity
 
     public function __get($attr)
     {
-        $attr[0] = strtolower($attr[0]);
-        $attr = preg_replace('/([A-Z])/', '-$1', $attr);
-        $attr = strtolower($attr);
+        $attr = $this->toKebabCase($attr);
         
         if (isset($this->$attr)) {
             return $this->$attr;
@@ -45,6 +43,15 @@ class MawiEntity
         }
 
         throw new MawiApiException(sprintf('No such "%s" attribute', $attr));
+    }
+
+    protected function toKebabCase(string $string)
+    {
+        $string[0] = strtolower($string[0]);
+        $string = preg_replace('/([A-Z])/', '-$1', $string);
+        $kebab_string = strtolower($string);
+        
+        return $kebab_string;
     }
 
     static public function setApi($api)

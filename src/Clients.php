@@ -4,7 +4,6 @@ namespace Wardenyarn\MawiApi;
 
 use GuzzleHttp\Exception\ServerException;
 use Wardenyarn\MawiApi\Entities\Client;
-use Wardenyarn\MawiApi\Entities\MawiEntity;
 
 trait Clients
 {
