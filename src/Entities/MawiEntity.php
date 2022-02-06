@@ -11,23 +11,50 @@ class MawiEntity
     public function __construct(array $data)
     {
         foreach ($data as $key => $value) {
-            $this->$key = $this->convert($value);
+            $this->$key = $this->convert($key, $value);
         }
     }
 
-    public function convert($data)
+    public function convert($key, $data)
     {
         if (isset($data['@attributes'])) {
-            $data = new self($data);
+            $data = $this->newEntity($key, $data);
         }
 
         if (is_array($data)) {
-            foreach ($data as &$d) {
-                $d = $this->convert($d);
+            foreach ($data as $k => &$d) {
+                $d = $this->convert($k, $d);
             }
         }
 
         return $data;
+    }
+
+    protected function newEntity($type, $data)
+    {
+        switch ($type) {
+            case 'client':
+                $class = Client::class;
+                break;
+            
+            case 'product':
+                $class = Product::class;
+                break;
+            
+            case 'event':
+                $class = Event::class;
+                break;
+            
+            case 'proposal':
+                $class = Proposal::class;
+                break;
+        
+            default:
+                $class = self::class;
+                break;
+        }
+
+        return new $class($data);
     }
 
     public function __get($attr)
